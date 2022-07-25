@@ -195,6 +195,7 @@ async def download_media(
                     if download_path:
                         logger.info("Media downloaded - %s", download_path)
                     DOWNLOADED_IDS.append(message.id)
+                    print('Processed message_id: %s'%(str(message.id)))
             break
         except pyrogram.errors.exceptions.bad_request_400.BadRequest:
             logger.warning(
@@ -372,5 +373,6 @@ def main():
 
 
 if __name__ == "__main__":
-    print_meta(logger)
+    #print_meta(logger)
+    print('Begin...')
     main()
